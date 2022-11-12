@@ -264,3 +264,63 @@
     }
 
 }
+
+.filter-container {
+    @include container(90%, 100%, 40px auto);
+    position: relative;
+
+    @include desktopView {
+        margin: 70px auto;
+    }
+}
+
+.filter-wrapper {
+    @include flexSetup(row, space-between, center);
+
+
+    .filters {
+        @include container(120px, fit-content, 0);
+        @include flexSetup(row, space-between, center);
+        padding: 10px;
+        border: 1px solid #B4B4B4;
+        border-radius: 8px;
+
+        p {
+            @include container(fit-content, fit-content, 0);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $FilterFont;
+        }
+
+        img {
+            @include container(24px, 24px, 0);
+            cursor: pointer;
+        }
+    }
+}
+
+.filter-menu {
+    @include container(120px, fit-content, 0);
+    padding: 10px;
+    box-shadow: 0px 5px 20px 0px $TextBlack;
+    background-color: $White;
+    border-radius: 0px 0px 5px 5px;
+    position: absolute;
+    left: 0;
+    border-top: 0px;
+
+    li {
+        font-size: 15px;
+        margin: 10px 20px 10px 0px;
+
+        &:hover {
+            color: $Purple;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    @include desktopView {
+        display: none !important;
+    }
+}

@@ -3,12 +3,12 @@ import { indexHomes } from '../assets/constants';
 import Star from '../assets/images/star.png';
 
 
-const Homes = () => {
+const Homes = ({ homes }) => {
 
   return (  
     <>
       <div className="homes-wrapper">
-        {indexHomes.map((home, index) => (
+        {homes.map((home, index) => (
           <div className="home" key={index}>
             <img src={home.img} alt="Metabnb home" className='home-img' />
             <div className="home-info">

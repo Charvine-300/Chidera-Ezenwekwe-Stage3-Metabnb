@@ -18,7 +18,7 @@ const Footer = () => {
               <p> {fItem.topic} </p>
               <ul>
                 {fItem.items.map((item, index) => (
-                  <li> {item} </li>
+                  <li key={index}> {item} </li>
                 ))}
               </ul>
             </div>

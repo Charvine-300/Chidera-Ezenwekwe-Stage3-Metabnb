@@ -5,6 +5,7 @@ import Token from '../assets/images/token.png';
 import Sea from '../assets/images/sea.png';
 import NFTs from '../assets/images/metabnb_nfts.png';
 import Homes from './Homes';
+import { indexHomes } from '../assets/constants';
 
 
 const Homepage = () => {
@@ -45,7 +46,7 @@ const Homepage = () => {
       {/* Adventure Section */}
       <div className="adventure-wrapper">
         <h2> Inspiration for your next adventure </h2>
-        <Homes />
+        <Homes homes={indexHomes} />
       </div>
 
       {/* Metabnb NFTs Section */}

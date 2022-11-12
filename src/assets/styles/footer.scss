@@ -30,6 +30,8 @@
 
         li {
             cursor: pointer;
+            color: $FooterFont;
+            margin: 10px 0px;
 
             &:hover {
                 color: $Purple;

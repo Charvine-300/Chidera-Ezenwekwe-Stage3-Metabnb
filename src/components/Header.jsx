@@ -22,18 +22,24 @@ const Header = () => {
     }
   }
 
+  const closeMenu = () => {
+    setDisplay('desktop');
+    setMenu(Menu);
+  }
+
+
 
   return (  
     <header>
       <div className="header-wrapper">
-        <Link to='/'>
+        <Link to='/' onClick={closeMenu}>
           <img src={Logo} alt="Metabnb Logo" id='logo' />
         </Link>
         <ul className="desktop-menu desktop">
-          <Link to='/'>
+          <Link to='/' onClick={closeMenu}>
             <li> Home </li>
           </Link>
-          <Link to="/places">  
+          <Link to="/places" onClick={closeMenu}>  
             <li> Place to say </li>
           </Link>
           <li> NFTs </li>
@@ -44,8 +50,10 @@ const Header = () => {
       </div>
       <div className={`mobile-menu ${display}`}>
         <ul>
-          <li> Home </li>
-          <Link> 
+          <Link to='/' onClick={closeMenu}>
+            <li> Home </li>
+          </Link>
+          <Link to="/places" onClick={closeMenu}>  
             <li> Place to say </li>
           </Link>
           <li> NFTs </li>
