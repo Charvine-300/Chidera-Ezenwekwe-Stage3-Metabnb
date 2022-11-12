@@ -1,0 +1,266 @@
+@import 'mixins';
+
+
+
+/*==========  ID Rules  ==========*/
+#location-box {
+    @include container(100%, 55px, 20px auto);
+    position: relative;
+
+    input {
+        @include container(95%, 85%, 0.5% 0 0 0);
+        padding: 0 0 0 5%;
+        font-family: 'Red Rose';
+        border-radius: 8px;
+        border: 1px solid $TextBlack;
+    }
+
+    button {
+        @include container(30%, 88%, 0.6% 0 0 0);
+        background-color: $Purple;
+        color: $White;
+        cursor: pointer;
+        border: 2px solid $Purple;
+        border-radius: 0px 8px 8px 0px;
+        position: absolute;
+        right: -3px;
+        font-family: "Red Rose";
+    }
+
+
+    @include desktopView {
+        @include container(80%, 55px, 40px 0);
+    }
+}
+
+
+
+
+/*==========  Class Rules  ==========*/
+.intro-wrapper {
+    @include container(80%, 100%, 40px auto);
+    @include flexSetup(column, center, center);
+
+    section {
+        @include container(100%, 100%, 0px auto 20px auto);
+        text-align: center;
+
+        h1 {
+            color: $TextBlack;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 140%;
+            letter-spacing: -0.02em;
+
+            strong {
+                color: $Purple;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 25px;
+            color: $TextBlack;
+        }
+    }
+
+    .intro-image {
+        @include container(100%, 100%, 0px auto 20px auto);
+
+        img {
+            @include container(100%, 100%, 0 auto);
+        }
+    }
+
+
+    @include minWidth(768px) {
+        section {
+            @include container(80%, 100%, 0px auto 20px auto);
+        }
+
+        .intro-image {
+            @include container(70%, 100%, 0px auto 20px auto);
+        }
+    }
+
+    @include nestHub(1024px, 1180px) {
+        align-items: center !important;
+        
+        h1 {
+            font-size: 40px !important;
+        }
+
+        p {
+            font-size: 20px !important;
+            line-height: 30px !important;
+        }
+    }
+
+
+    @include desktopView {
+        @include container(90%, 100%, 80px auto 40px auto);
+        @include flexSetup(row, space-between, flex-start);
+
+        section {
+            @include container(50%, 100%, 0px);
+            text-align: left;
+
+            h1 {
+                font-size: 56px;
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 35px;
+            }
+        }
+
+        .intro-image {
+            @include container(40%, 100%, 0px);
+        }
+
+    }
+}
+
+.sponsors-wrapper {
+    @include container(100%, 100%, 50px auto);
+    background-color: $Purple;
+   
+
+    section {
+        @include flexSetup(column, center, center);
+
+        img {
+            margin: 20px 0px;
+        }
+    }
+
+    @include minWidth(768px) {
+        section {
+            @include flexSetup(row, space-around, center);
+        }
+    }
+}
+
+.adventure-wrapper {
+    @include container(80%, 100%, 50px auto);
+
+    h2 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+        color: $Black;
+        text-align: center;
+    }
+
+
+    @include desktopView {
+        width: 90%;
+
+        h2 {
+            font-size: 48px;
+            margin: 100px auto 30px auto;
+            line-height: 60px;
+        }
+    }
+}
+
+.metabnb-nfts {
+    @include container(100%, 100%, 50px auto 0px auto);
+    @include flexSetup(column, center, center);
+    background-color: $Purple;
+    padding: 20px 0px;
+
+    section {
+        @include container(80%, 100%, 20px auto);
+        text-align: center;
+        color: $White;
+
+        h2 {
+            font-weight: 700;
+            font-size: 38px;
+            line-height: 30px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        button {
+            display: block;
+            @include container(156px, 48px, 20px auto);
+            background-color: $White;
+            color: $Purple;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            border-radius: 8px;
+            border: 1px solid $White;
+            font-family: 'Red Rose';
+            cursor: pointer;
+        }
+    }
+
+    .metabnb-img {
+        @include container(80%, 100%, 20px auto);
+
+        img {
+            @include container(100%, 100%, 0);
+        }
+    }
+
+
+    @include landscapeSet {
+        .metabnb-img {
+            @include container(60%, 100%, 20px auto);
+        }
+    }
+
+    @include minWidth(768px) {
+        section {
+            width: 70%;
+        }
+
+        .metabnb-img {
+            width: 55%;
+        }
+    }
+
+    @include desktopView {
+        width: 80%;
+        padding: 60px 10% !important;
+        @include flexSetup(row, space-between, center);
+
+        section {
+            text-align: left;
+            @include container(40%, 100%, 0);
+        }
+
+        button {
+            margin: 50px 0 !important;
+        }
+
+        .metabnb-img {
+            @include container(50%, 100%, 0);
+        }
+    }
+
+    @include minWidth(1336px) {
+
+        h2 {
+            font-size: 48px !important;
+            line-height: 60px !important;
+        }
+
+        p {
+            font-size: 18px !important;
+            line-height: 35px !important;
+        }
+
+        
+    }
+
+}

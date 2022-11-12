@@ -1,0 +1,77 @@
+@import 'mixins';
+
+
+
+/*==========  ID Rules  ==========*/
+#bold-info {
+    font-weight: 700;
+}
+
+
+
+/*==========  Class Rules  ==========*/
+.homes-wrapper {
+    @include flexSetup(row, center, center);
+    flex-wrap: wrap;
+
+    @include landscapeSet {
+        justify-content: space-between;
+    }
+
+    @include minWidth(768px) {
+        justify-content: space-around;
+    }
+
+}
+
+.home {
+    @include container(100%, 100%, 20px 0);
+    border: 1px solid $HomeBorder;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+
+    .home-img {
+        @include container(100%, 100%, 0 0 20px 0);
+    }
+
+    .home-info {
+        @include flexSetup(row, space-between, center);
+        @include container(100%, 25px, 0);
+
+        p {
+            font-size: 12px;
+            line-height: 13px;
+        }    
+    }
+
+    .stars img {
+        margin: 10px 5px 0px 0px;
+    }
+
+
+    @include landscapeSet {
+        width: 40%;
+    }
+
+    @include minWidth(768px) {
+        width: 40%;
+    }
+
+    @include minWidth(1336px) {
+        width: 20%;
+    }
+
+    &:hover {
+        box-shadow: 5px 5px 20px rgba(160, 34, 121, 0.5);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+
+
+/*==========  Element Rules  ==========*/
+
+
+
+

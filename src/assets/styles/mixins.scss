@@ -1,0 +1,101 @@
+$Black: #000000;
+$White: #FFFFFF;
+$Purple: #A02279;
+$TextBlack: #434343;
+$HomeBorder: #D7D7D7;
+$FooterFont: #F1F3F9;
+$FooterBlack: #1D1D1E;
+$CopyRight: #F7F7F7;
+
+
+//Animation On-hover menu item
+@mixin menuSelect {
+    &:hover {
+        cursor: pointer;
+        color: $Purple;
+    }
+    &:after {
+        content: '';
+        display: block;
+        transform: scaleX(0);  
+        border-bottom: solid 3px $Purple;  
+        transition: transform 250ms ease-in-out;
+    }
+    &:hover:after {
+        transform: scaleX(1); 
+    }
+}
+
+
+//Styling to set its recipient to absolute positioning
+@mixin absoluteSet {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+//Background for images before they load
+@mixin lazyLoad($padding) {
+    height: 0;
+    position: relative;
+    padding-bottom: $padding;
+    background-color: $Background;
+    img {
+        display: block;
+        object-fit: cover;
+        @include absoluteSet;
+    }
+}
+
+//Styling to make recipient a flexbox
+@mixin flexSetup( $direction, $justify, $center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $center;
+}
+
+//Styling for elements and items of various sizes and margins
+@mixin container($width, $height, $margin) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+}
+
+//Stylings to add to layout at Landscape mode
+@mixin landscapeSet {
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+//Stylings to add to layout at a minimum width of 1024px
+@mixin desktopView {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+//Styling for a set of devices that fall within the range set
+@mixin nestHub($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+//Styling for layout to show at programmer's choice
+@mixin minWidth($arch) {
+    @media screen and (min-width: $arch) {
+        @content;
+    }
+}
+
+@mixin maxWidth($arch) {
+    @media screen and (max-width: $arch) {
+        @content;
+    }
+}
+
+
