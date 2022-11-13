@@ -82,6 +82,12 @@
         }
     }
 
+    #mobile-wallet {
+        font-weight: 700;
+        color: $Purple;
+        margin-top: 20px;
+    }
+
     @include desktopView {
         display: none !important;
     }
@@ -94,24 +100,26 @@ header {
     z-index: 100;
     background-color: $White;
     box-shadow: 0px 0px 15px rgb(0 0 0 / 30%);
+
+    a {
+        color: $TextBlack;
+        text-decoration: none;
+    }
+    
+    ul {
+        padding: 0;
+    }
+    
+    li {
+        cursor: pointer;
+        color: $TextBlack;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        list-style-type: none;
+    }
 }
 
-a {
-    color: $TextBlack;
-    text-decoration: none;
-}
 
-ul {
-    padding: 0;
-}
-
-li {
-    cursor: pointer;
-    color: $TextBlack;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    list-style-type: none;
-}
 
 

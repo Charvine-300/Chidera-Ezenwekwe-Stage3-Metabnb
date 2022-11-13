@@ -6,7 +6,7 @@ import Close from '../assets/images/close.png'
 import { Link } from 'react-router-dom'
 
 
-const Header = () => {
+const Header = ({ setModal }) => {
   const [display, setDisplay] = useState('desktop');
   const [menu, setMenu] = useState(Menu);
 
@@ -45,7 +45,11 @@ const Header = () => {
           <li> NFTs </li>
           <li> Community </li>
         </ul>
-        <button id="wallet" className="desktop"> Connect wallet </button>
+        <button 
+          id="wallet" 
+          className="desktop"
+          onClick={() => setModal('flex')}
+        > Connect wallet </button>
         <img src={menu} alt="Menu" id='hamburger' className='mobile' onClick={menuToggle} />
       </div>
       <div className={`mobile-menu ${display}`}>
@@ -58,6 +62,13 @@ const Header = () => {
           </Link>
           <li> NFTs </li>
           <li> Community </li>
+          <li 
+            id='mobile-wallet'
+            onClick={() => {
+              setModal('flex');
+              closeMenu();
+            }}
+          > Connect Wallet </li>
         </ul>
       </div>
 

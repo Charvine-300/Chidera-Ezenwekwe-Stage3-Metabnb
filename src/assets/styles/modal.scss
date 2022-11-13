@@ -1,0 +1,126 @@
+@import 'mixins';
+
+
+
+/*==========  ID Rules  ==========*/
+
+
+
+
+/*==========  Class Rules  ==========*/
+.modal-wrapper {
+    @include container(100vw, 100vh, 0);
+    @include flexSetup(column, center, center);
+    position: absolute;
+    z-index: 1000;
+    background: $ModalBackground;
+    position: fixed;
+    overflow: hidden;
+
+}
+
+.wallet-options {
+    background-color: $White;
+    @include container(80%, auto, 0);
+    padding: 15px 0px;
+    border-radius: 10px;
+
+    @include desktopView {
+        width: 40%;
+    }
+
+    @include minWidth(1336px) {
+        width: 30%;
+    }
+}
+
+.wallet-info {
+    @include container(90%, fit-content, 0);
+    padding: 0px 5%;
+    border-bottom: 1px solid $ModalBorder;
+
+    .wallet-flex {
+        @include container(100%, fit-content, 0 auto);
+        @include flexSetup(row, space-between, center);
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 30px;
+        color: $FilterFont;
+        margin: 5px 0px;
+    }
+
+    img {
+        @include container(15px, 15px, 0);
+        cursor: pointer;
+    }
+
+
+    @include desktopView {
+        .wallet-flex {
+            padding-bottom: 10px;
+        }
+
+        .wallet-flex p {
+            font-size: 24px;
+        }
+
+        .wallet-flex img {
+            @include container(20px, 20px, 0);
+        }
+    }
+}
+
+.wallet-list {
+    @include container(90%, fit-content, 20px auto);
+
+    p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+.wallets {
+    padding: 10px;
+    @include container(90%, 35px, 10px 0);
+    @include flexSetup(row, space-between, center);
+    padding: 10px 5%;
+    background-color: $WalletBack;
+    border: 1px solid $ModalBorder;
+    border-radius: 12px;
+
+    .wallet-logo {
+        @include flexSetup(row, center, center);
+
+        img {
+            @include container(35px, 35px, 0 10px 0 0);
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 23px;
+            color: $Black;
+        }
+    }
+
+    img {
+        @include container(7px, 12px, 0);
+    }
+
+
+    @include desktopView {
+        margin: 15px 0;
+
+        .wallet-logo p {
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/*==========  Element Rules  ==========*/
